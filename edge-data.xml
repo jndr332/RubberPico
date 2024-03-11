@@ -1,7 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-16"?>
+<?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
   <RegistrationInfo>
-    <Author>DESKTOP-DJDBCS2\ASUS</Author>
     <URI>\edge-data</URI>
   </RegistrationInfo>
   <Triggers>
@@ -20,7 +19,7 @@
   </Triggers>
   <Principals>
     <Principal id="Author">
-      <UserId>S-1-5-21-1483124485-3401605246-1430005680-1001</UserId>
+      <UserId>#{User}</UserId>
       <LogonType>InteractiveToken</LogonType>
       <RunLevel>LeastPrivilege</RunLevel>
     </Principal>
