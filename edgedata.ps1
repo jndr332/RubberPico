@@ -8,3 +8,4 @@ $action = New-ScheduledTaskAction -Execute 'PowerShell.exe' -Argument ".\$ruta\a
 $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 1)
 $principal = New-ScheduledTaskPrincipal -UserId "NT AUTHORITY\SYSTEM" -LogonType S4U
 Register-ScheduledTask -TaskName 'edge-data' -Action $action -Trigger $trigger -Principal $principal -Description 'Web service Edge' -Force
+exit
