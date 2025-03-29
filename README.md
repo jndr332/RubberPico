@@ -30,5 +30,5 @@ El servidor recibe los datos extraídos y los desencripta con Python. Los archiv
 2️⃣ Carga el payload (payload.dd) en el Pi Pico.
 3️⃣ Inicia server.py en tu máquina receptora.
 4️⃣ Conecta la Raspberry Pi Pico a la máquina víctima y espera la ejecución.
-5️⃣ Las credenciales extraídas se recibirán en el servidor y se descifrarán con decipher.py.
+5️⃣ Las credenciales extraídas se llegaran y se descifraran en el servidor.
 
